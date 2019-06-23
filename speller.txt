@@ -17,3 +17,19 @@ There is some code that opens a dictionary which then needs to be loaded
 There is code that iterates over the dictionary and reads the woods therein one at a time into a buffer ie (string) called word.
 Then we stop short of inserting these words into the hashtable.
 We close the file and return true to indicate success
+
+check, size, and unload, just barely implemented, ie to allow for the file to compile.
+They need to be completed to check if the word exists
+
+Speller.c
+Checking the time it takes to execute using getrusage, which times the execution before and after
+
+It will be benched marked by check load size and unload functions
+Speller will not load dictionaries until you implement load in dictionary.c
+
+The default dictionary has 143091 words, and all must be loaded into memory
+Dictionary is sorted lexicographically, with only one word per line (each of which ends with \n)
+No word is longer than 45 characters, and no word appears more than once.
+
+Use ./speller dictionaries/small text because it uses a much smaller dictionary
+Text is the file we want to check
