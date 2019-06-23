@@ -1,0 +1,19 @@
+Have to include dictionary.h in speller.c and dictionary.c
+Ie # include dictionary.h
+We use std bool.h where bool is defined
+#define is a preprocessor directive that defines a constant and in the file automatically changes the code to define it via the #define  directive
+
+Two items check and load take pointers for strings and dictionary
+Const means you cant change the words accidentally or purposely
+
+Defined struct called node in a hash table.  There is enough room for n pointers to nodes
+N has been defined to 26 via the above...one for each letter
+
+Hash function returns 0 for any word that starts with a or A and 1 for any word that starts with b or B.  25 for any word that starts with z or Z
+
+Load is only partially completed.  It will load a dictionary of words into the hash table.
+There is some code that initializes the buckets of pointers in the hash table (pointers to NULL
+There is some code that opens a dictionary which then needs to be loaded
+There is code that iterates over the dictionary and reads the woods therein one at a time into a buffer ie (string) called word.
+Then we stop short of inserting these words into the hashtable.
+We close the file and return true to indicate success
