@@ -77,3 +77,25 @@ Linked lists are comprised of nodes.
 Each node has a value along with a pointer to the next node
 
 
+Data type deals with char arrays
+Link list, points to the next node,
+
+Incorporate hash tables with linked lists, you have linked list inside of each bucket
+Hash table with buckets and each integer has a value
+Hash function, hash value and see which value it should be in and
+Have to allocate space for each node
+Malloc will need to know how much space to add
+Malloc will give us our space
+Whenever we are creating a node we just need to malloc a node pointer
+If you wanted a second node, you would add a second node
+
+// node *node1 = malloc(sizeof(node);
+// node *node2 = malloc(sizeof(node);
+
+// strcpy(node1->word, "Hello");
+// strcpy(node2->word, "World");
+
+// these are two independents nodes
+// point to next variable
+// node1->next = node2;
+// link list of size 2
