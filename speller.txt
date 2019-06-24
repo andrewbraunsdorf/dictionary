@@ -33,3 +33,29 @@ No word is longer than 45 characters, and no word appears more than once.
 
 Use ./speller dictionaries/small text because it uses a much smaller dictionary
 Text is the file we want to check
+
+Cannot alter speller.c
+
+
+alter the value of N and the implementation of hash.
+
+ spell checker must not leak any memory.
+
+How many words can a spell checker check
+Implement
+Load- loads dictionary
+Check- checks dictionary
+Size- returns the number of words in the dictionary
+Unload- frees the dictionary from memory
+
+Load
+For each word in the dictionary text file, store it in the dictionary’s data structure
+Linked lists
+Hash tables
+Tries
+
+Hash tables
+An array of buckets
+Hash function
+	Returns the bucket that a given key belongs to
+

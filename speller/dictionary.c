@@ -7,7 +7,7 @@
 #include "dictionary.h"
 
 // Represents number of buckets in a hash table
-#define N 26
+#define N 27
 
 // Represents a node in a hash table
 typedef struct node
@@ -16,6 +16,18 @@ typedef struct node
     struct node *next;
 }
 node;
+
+// node *node1 = malloc(sizeof(node);
+// node *node2 = malloc(sizeof(node);
+
+// strcpy(node1->word, "Hello");
+// strcpy(node2->word, "World");
+
+// these are two independents nodes
+// point to next variable
+// node1->next = node2;
+// link list of size 2
+
 
 // Represents a hash table
 node *hashtable[N];
