@@ -59,3 +59,21 @@ An array of buckets
 Hash function
 	Returns the bucket that a given key belongs to
 
+	Trouble cs50 balls
+Have 10 numbered 1-10
+Then put them into groups
+Put them into even and odds tables
+Hash table: 2 buckets
+Hash function : if (n % 2 == 1, odd box, else even box
+
+Now have 20 balls
+Sort into 2 boxes but still too many
+Sort them via 1-5, 6-10, 11-15, 16-20
+Now they are nicely balanced...as you have the same number of balls in each box.
+
+Hash table is an array of buckets
+A hash table is an array of linked lists
+Linked lists are comprised of nodes.
+Each node has a value along with a pointer to the next node
+
+
