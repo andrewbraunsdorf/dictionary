@@ -44,7 +44,7 @@ bool load(const char *dictionary)
     // Initialize hash table
     for (int i = 0; i < N; i++)
     {
-        hashtable[i] = NULL;
+        hashtable[i] = malloc(sizeof(node));
     }
 
     // Open dictionary
