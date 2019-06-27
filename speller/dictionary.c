@@ -7,7 +7,7 @@
 #include "dictionary.h"
 
 // Represents number of buckets in a hash table
-#define N 27
+#define N 26
 
 // Represents a node in a hash table
 typedef struct node
@@ -44,7 +44,8 @@ bool load(const char *dictionary)
     // Initialize hash table
     for (int i = 0; i < N; i++)
     {
-        hashtable[i] = malloc(sizeof(node));
+        hashtable[i] = NULL;
+        // hashtable[i] = malloc(sizeof(node));
     }
 
     // Open dictionary
@@ -61,7 +62,8 @@ bool load(const char *dictionary)
     // Insert words into hash table
     while (fscanf(file, "%s", word) != EOF)
     {
-        // TODO
+        node *newNode = malloc(sizeof(node));
+
     }
 
     // Close dictionary
