@@ -99,3 +99,34 @@ If you wanted a second node, you would add a second node
 // point to next variable
 // node1->next = node2;
 // link list of size 2
+
+Hashtables are arrays of linked lists
+Speller
+Determine which hashtable the word fits into and hash the value and figure out which linked list it belongs to
+
+We just want to malloc a node pointer
+Now we want to set the value of the word
+strcpy(node1->word, “hello”)
+Sowe have to get this to occur programmatically… ie with word
+So perform strcpy(node1->word, word)
+
+Have to add access the next variable to create a linked list
+So node1->next = node2;  again have to do this programmatically so
+node1->next = NULL
+Define hashtable size
+
+What goes inside of while loop
+while (fscanf(file, "%s", word) != EOF)
+
+Every word we scan we want to malloc a node for it
+node *newNode = malloc(sizeof(node));
+
+        if (newNode == NULL)
+
+            unload();
+            return false;
+
+
+We want to check that malloc succeeded
+If you run out of memory malloc will return null
+So when you malloc you always need to make sure it exists
