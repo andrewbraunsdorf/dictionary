@@ -106,7 +106,16 @@ unsigned int size(void)
 // Returns true if word is in dictionary else false
 bool check(const char *word)
 {
-    // TODO
+    node *cursor = hashtable[hash(word)]
+    while (cursor != NULL)
+    {
+        if (strcasecmp(word, cursor->word) == 0)
+        {
+            return true;
+        }
+
+        cursor = cursor->next;
+    }
     return false;
 }
 
