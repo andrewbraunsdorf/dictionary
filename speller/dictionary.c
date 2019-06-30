@@ -3,19 +3,20 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #include "dictionary.h"
 
 // Represents number of buckets in a hash table
-#define N 26
+#define hashTableSize 26
 
 // Represents a node in a hash table
 typedef struct node
 {
     char word[LENGTH + 1];
     struct node *next;
-}
-node;
+} node;
 
 // node *node1 = malloc(sizeof(node);
 // node *node2 = malloc(sizeof(node);
@@ -30,7 +31,9 @@ node;
 
 
 // Represents a hash table
-node *hashtable[N];
+node *hashtable[hashTableSize];
+
+int dictionaryWords;
 
 // Hashes word to a number between 0 and 25, inclusive, based on its first letter
 unsigned int hash(const char *word)
@@ -42,7 +45,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // Initialize hash table
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < hashTableSize; i++)
     {
         hashtable[i] = NULL;
         // hashtable[i] = malloc(sizeof(node));
@@ -64,6 +67,26 @@ bool load(const char *dictionary)
     {
         node *newNode = malloc(sizeof(node));
 
+        if (newNode == NULL)
+        {
+            unload();
+            return false;
+        }
+
+        strcpy(newNode->word, word);
+        int hashed = hash(word);
+        if (hashtable[hashed] == NULL)
+        {
+            hashtable[hashed] = newNode;;
+            newNode->next = NULL;
+        }
+        else
+        {
+            newNode->next = hashtable[hashed];
+            hashtable[hashed] = newNode;
+        }
+
+        dictionaryWords++;
     }
 
     // Close dictionary
