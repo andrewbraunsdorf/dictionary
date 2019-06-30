@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <strings.h>
 
 #include "dictionary.h"
 
@@ -106,7 +107,7 @@ unsigned int size(void)
 // Returns true if word is in dictionary else false
 bool check(const char *word)
 {
-    node *cursor = hashtable[hash(word)]
+    node *cursor = hashtable[hash(word)];
     while (cursor != NULL)
     {
         if (strcasecmp(word, cursor->word) == 0)
@@ -122,6 +123,17 @@ bool check(const char *word)
 // Unloads dictionary from memory, returning true if successful else false
 bool unload(void)
 {
-    // TODO
+    for(int wordsInHashTable = 0; wordsInHashTable < hashTableSize; wordsInHashTable++)
+    {
+        node *cursor = hashtable[wordsInHashTable];
+        while (cursor != NULL)
+        {
+            node *temp = cursor;
+            cursor = cursor-> next;
+            free(temp);
+        }
+        free(cursor);
+    }
+
     return false;
 }
