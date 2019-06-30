@@ -130,3 +130,28 @@ node *newNode = malloc(sizeof(node));
 We want to check that malloc succeeded
 If you run out of memory malloc will return null
 So when you malloc you always need to make sure it exists
+
+Check
+Case- insensitivity
+Assume strings with only alphabetical characters and or apostrophes
+
+Hashtable is an array of linked lists
+With each element of the array is a node pointer
+If the word exists it can be found in the hash table
+Which bucket would it be in?
+Hash table [hash(word)]
+
+Search in that linked list
+Strcasecmp
+
+Traverse linked list
+Node *cursor = head;
+While (cursor != Null)
+{
+	// do something
+	Cursor = cursor->next
+}
+
+You have to compare strings
+Compare words
+Cursor word
