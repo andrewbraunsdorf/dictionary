@@ -49,7 +49,7 @@ bool load(const char *dictionary)
 {
     // Initialize hash table
     for (int i = 0; i < hashTableSize; i++)
-    // for (int i = 0; i < N; i++)
+        // for (int i = 0; i < N; i++)
     {
         hashtable[i] = NULL;
         // hashtable[i] = malloc(sizeof(node));
@@ -104,14 +104,14 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     unsigned int wordCount = 0;
-    for(int wordsInHashTable = 0; wordsInHashTable < hashTableSize; wordsInHashTable++)
-    // for(int wordsInHashTable = 0; wordsInHashTable < N; wordsInHashTable++)
+    for (int wordsInHashTable = 0; wordsInHashTable < hashTableSize; wordsInHashTable++)
+        // for(int wordsInHashTable = 0; wordsInHashTable < N; wordsInHashTable++)
     {
         node *temp = hashtable[wordsInHashTable];
 
-        while( temp != NULL)
+        while (temp != NULL)
         {
-            temp= temp->next;
+            temp = temp->next;
             wordCount++;
         }
 
@@ -138,8 +138,8 @@ bool check(const char *word)
 // Unloads dictionary from memory, returning true if successful else false
 bool unload(void)
 {
-    for(int wordsInHashTable = 0; wordsInHashTable < hashTableSize; wordsInHashTable++)
-    // for(int wordsInHashTable = 0; wordsInHashTable < N; wordsInHashTable++)
+    for (int wordsInHashTable = 0; wordsInHashTable < hashTableSize; wordsInHashTable++)
+        // for(int wordsInHashTable = 0; wordsInHashTable < N; wordsInHashTable++)
     {
         node *cursor = hashtable[wordsInHashTable];
         while (cursor != NULL)
