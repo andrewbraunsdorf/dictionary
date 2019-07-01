@@ -11,6 +11,7 @@
 
 // Represents number of buckets in a hash table
 #define hashTableSize 26
+// #define N 26
 
 // Represents a node in a hash table
 typedef struct node
@@ -33,6 +34,7 @@ typedef struct node
 
 // Represents a hash table
 node *hashtable[hashTableSize];
+// node *hashtable[N];
 
 int dictionaryWords;
 
@@ -47,6 +49,7 @@ bool load(const char *dictionary)
 {
     // Initialize hash table
     for (int i = 0; i < hashTableSize; i++)
+    // for (int i = 0; i < N; i++)
     {
         hashtable[i] = NULL;
         // hashtable[i] = malloc(sizeof(node));
@@ -102,6 +105,7 @@ unsigned int size(void)
 {
     unsigned int wordCount = 0;
     for(int wordsInHashTable = 0; wordsInHashTable < hashTableSize; wordsInHashTable++)
+    // for(int wordsInHashTable = 0; wordsInHashTable < N; wordsInHashTable++)
     {
         node *temp = hashtable[wordsInHashTable];
 
@@ -112,7 +116,7 @@ unsigned int size(void)
         }
 
     }
-    return 0;
+    return wordCount;
 }
 
 // Returns true if word is in dictionary else false
@@ -135,6 +139,7 @@ bool check(const char *word)
 bool unload(void)
 {
     for(int wordsInHashTable = 0; wordsInHashTable < hashTableSize; wordsInHashTable++)
+    // for(int wordsInHashTable = 0; wordsInHashTable < N; wordsInHashTable++)
     {
         node *cursor = hashtable[wordsInHashTable];
         while (cursor != NULL)
