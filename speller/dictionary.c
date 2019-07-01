@@ -100,7 +100,18 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded else 0 if not yet loaded
 unsigned int size(void)
 {
-    // TODO
+    unsigned int wordCount = 0;
+    for(int wordsInHashTable = 0; wordsInHashTable < hashTableSize; wordsInHashTable++)
+    {
+        node *temp = hashtable[wordsInHashTable];
+
+        while( temp != NULL)
+        {
+            temp= temp->next;
+            wordCount++;
+        }
+
+    }
     return 0;
 }
 
