@@ -135,5 +135,5 @@ bool unload(void)
         free(cursor);
     }
 
-    return false;
+    return true;
 }

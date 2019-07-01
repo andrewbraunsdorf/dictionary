@@ -155,3 +155,17 @@ While (cursor != Null)
 You have to compare strings
 Compare words
 Cursor word
+
+
+Unload
+Freeing linked list
+Free up memory
+Node *cursor = head;
+While (cursor != NULL)
+{
+Node *temp = cursor;
+Cursor = cursor->next;
+free(temp);
+
+Assign a new node pointer falling convention of walk through
+Want it to point to the very first element of a linked list
